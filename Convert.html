@@ -1,0 +1,19 @@
+<html>
+  <head></head>
+  <body>
+    <script type="text/javascript" src="GhostJSONToWPXML.js"></script>
+
+    <label for="jsonText"> JSON Text </label>
+    <textarea id="jsonText" rows="5"></textarea>
+
+    <input type="radio" name="htmlOrMarkdown" value="true" id="markdownRadio" checked />
+    <label for="MarkdownRadio">Markdown</label> <input type="radio" name="htmlOrMarkdown" value="false" id="HTMLRadio" /> 
+
+    <label for="HTMLRadio">HTML</label>
+
+    <label for="xmlResult"> XML Result </label>
+    <textarea id="xmlResult" rows="5"></textarea>  
+
+    <button onClick="addTags()">Convert</button>
+  </body>
+</html>
