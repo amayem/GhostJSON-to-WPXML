@@ -68,8 +68,13 @@
             } else {
                 xmlString += post.html
             }
+            xmlString += ']]></content:encoded>'
 
-            xmlString += ']]></content:encoded><wp:post_name>' + post.slug + '</wp:post_name><wp:status>';
+            if (post.custom_excerpt) {
+                xmlString += '<excerpt:encoded><![CDATA[' + post.custom_excerpt + ']]></excerpt:encoded>'
+            }
+
+            xmlString += '<wp:post_name>' + post.slug + '</wp:post_name><wp:status>';
 
             if (post.status == 'published') {
                 xmlString += 'publish</wp:status><wp:post_type>post</wp:post_type>';
