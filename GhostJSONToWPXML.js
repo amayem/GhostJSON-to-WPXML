@@ -37,7 +37,12 @@
             postID = posts_tags[i].post_id
             tagID = posts_tags[i].tag_id
 
-            postsLookup[postID].tags.push(tagsLookup[tagID])
+            if (postsLookup[postID]) {
+                postsLookup[postID].tags.push(tagsLookup[tagID])
+            } else {
+                // console.log('Skipping Tag ID ' + tagID + 'for Post ID' + postID);
+            }
+
         }
         // console.log(postsLookup);
         var xmlString = '<?xml version="1.0" encoding="UTF-8" ?><rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/"><channel><wp:wxr_version>1.2</wp:wxr_version>';
